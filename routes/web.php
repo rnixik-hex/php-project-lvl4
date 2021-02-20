@@ -1,7 +1,5 @@
 <?php
 
-use App\Http\Controllers\DomainChecksController;
-use App\Http\Controllers\UrlController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', fn() => view('main'))->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
