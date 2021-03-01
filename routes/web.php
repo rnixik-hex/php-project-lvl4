@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\TaskStatusController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', fn() => view('main'))->name('home');
+Route::resource('task_statuses', TaskStatusController::class);
 
 Auth::routes();
 
